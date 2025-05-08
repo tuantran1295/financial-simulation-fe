@@ -9,6 +9,7 @@ import ValuationDisplay from '@/components/ValuationDisplay';
 import PieChart from '@/components/PieChart';
 import Sidebar from '@/components/Sidebar';
 import TeamToggle from '@/components/TeamToggle';
+import ChatBox from '@/components/ChatBox';
 import { SimulationState } from '@/types/simulation';
 import { Toaster } from '@/components/ui/sonner';
 import { toast } from 'sonner';
@@ -19,8 +20,8 @@ const Index = () => {
     interestRate: '20%',
     multiple: '10x',
     factorScore: 2,
-    companyName: 'ABC Corp.',
-    description: 'This is the company\'s description. This company is #1!',
+    companyName: 'FPT Information System',
+    description: 'This company is #1 in Vietnam!',
   });
 
   const [isTeam1, setIsTeam1] = useState(true);
@@ -108,6 +109,10 @@ const Index = () => {
           </div>
         </div>
       </div>
+      
+      {/* ChatBox Component */}
+      <ChatBox />
+      
       <Toaster />
     </div>
   );
