@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react()
   ].filter(Boolean),
+  base: '/financial-simulation-fe/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
