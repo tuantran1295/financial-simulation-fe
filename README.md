@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Fin-sim-FE
 
-Currently, two official plugins are available:
+A simulation tool for deal analysis and valuation with team-based roles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Folder Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+deal-vision-sim/
+├── public/             # Static assets
+├── src/
+│   ├── components/     # Reusable UI components
+│   │   └── ui/         # Shadcn UI components
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions and helpers
+│   ├── pages/          # Page components
+│   └── types/          # TypeScript type definitions
+├── index.html          # HTML entry point
+└── README.md           # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Key Components
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **TeamToggle**: Allows switching between Team 1 (Input) and Team 2 (Approval) roles
+- **SimulationForm**: Handles input of simulation parameters
+- **ValuationDisplay**: Shows calculated company valuation
+- **Timer**: Tracks simulation time remaining
+- **PieChart**: Visualizes interest allocation
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Installation and Setup
+
+### Installation Steps
+
+```sh
+# Step 1: Navigate to the project directory.
+cd fin-sim-fe
+
+# Step 3: Install the necessary dependencies.
+npm install
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
+
+The development server will start at http://localhost:8080
+
+## Development
+
+This project is built with:
+
+- Vite - Fast build tool and development server
+- TypeScript - Type-safe JavaScript
+- React - UI library
+- shadcn-ui - Component library
+- Tailwind CSS - Utility-first CSS framework
+- React Router - Client-side routing
+- React Query - Data fetching and state management
